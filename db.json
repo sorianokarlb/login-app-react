@@ -1,0 +1,84 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "email": "sample@gmail.com",
+      "password": "sample"
+    },
+    {
+      "id": 2,
+      "email": "admin@gmail.com",
+      "password": "admin"
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "test",
+      "id": 3
+    },
+    {
+      "email": "test2@gmail.com",
+      "password": "test2",
+      "id": 4
+    },
+    {
+      "email": "sample2@gmail.com",
+      "password": "sample2",
+      "id": 5
+    },
+    {
+      "email": "sample3@gmail.com",
+      "password": "sample3",
+      "id": 6
+    },
+    {
+      "email": "sample4@gmail.com",
+      "password": "sample4",
+      "id": 7
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 8
+    },
+    {
+      "email": "test4@gmail.com",
+      "password": "test4",
+      "id": 9
+    },
+    {
+      "email": "test5@gmail.com",
+      "password": "test5",
+      "id": 10
+    },
+    {
+      "email": "test6@gmail.com",
+      "password": "test6",
+      "id": 11
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 12
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 13
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 14
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 15
+    },
+    {
+      "email": "test123@gmail.com",
+      "password": "test123",
+      "id": 16
+    }
+  ]
+}
