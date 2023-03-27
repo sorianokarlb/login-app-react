@@ -1,6 +1,6 @@
 import './LoginForm.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
@@ -9,17 +9,25 @@ import { Link } from 'react-router-dom'
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
+
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
+
+    const handleShowPassword = () =>{
+        setShowPassword(!showPassword);
+    }
+
     const handleSubmit = () => {
         axios.get(`http://localhost:3000/user`)
         .then(res => {
+            console.log(res.data)
             res.data.map(i => {
                 if(email == i.email  && password == i.password){
                     Swal.fire(
@@ -32,7 +40,10 @@ const LoginForm = () => {
                     'Wrong email!',
                     'You clicked the button!',
                     'error'
-                    )
+                    ).then(()=>{
+                        setEmail("")
+                        setPassword("")
+                    })
                 }
             })
         })
@@ -50,9 +61,9 @@ const LoginForm = () => {
                     </span>
                 </div>
                 <div className="input-container">
-                    <input placeholder="Enter password" type="password" onChange={handlePassword} value={password}/>
-                    <span>
-                       <FontAwesomeIcon icon={faEye} />
+                    <input placeholder="Enter password" type={showPassword? 'text' : 'password'} onChange={handlePassword} value={password}/>
+                    <span onClick={handleShowPassword}>
+                       <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                     </span>
                     </div>
                     <button className="submit" type="submit" onClick={handleSubmit}>
